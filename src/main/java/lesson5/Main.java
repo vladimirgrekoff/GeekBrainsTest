@@ -6,11 +6,11 @@ public class Main {
         Employee[] employeeArr = new  Employee[5];
 
 
-        employeeArr[0] = new Employee("Сухов Александр Сергеевич", "директор", 70000, "sukhov_as@mail.ru", 50, "89139214427");
-        employeeArr[1] = new Employee("Иванов Сидор Петрович", "инженер", 40000, "ivanoff@mail.ru", 35,"89139261127");
-        employeeArr[2] = new Employee("Петров Иван Сидорович", "дизайнер", 45000, "petrov_is@mail.ru",30, "89089116081");
-        employeeArr[3] = new Employee("Сидоров Петр Иванович", "токарь", 55000,"sidorovpi@mail.ru",  45);
-        employeeArr[4] = new Employee("Александров Сергей Зиновьевич", "сварщик", 60000,  42, "89189193017");
+        employeeArr[0] = new Employee("Сухов Александр Сергеевич", "директор", "sukhov_as@mail.ru", "89139214427", 70000, 50);
+        employeeArr[1] = new Employee("Иванов Сидор Петрович", "инженер", "ivanoff@mail.ru","89139261127", 40000, 35);
+        employeeArr[2] = new Employee("Петров Иван Сидорович", "дизайнер", "petrov_is@mail.ru", "89089116081", 45000,30);
+        employeeArr[3] = new Employee("Сидоров Петр Иванович", "токарь", "sidorovpi@mail.ru", 55000,  45);
+        employeeArr[4] = new Employee("Александров Сергей Зиновьевич", "сварщик", "89189193017", 60000,  42);
 
         printInfoEmployeeOlderAge(employeeArr, 40); //вывести список сотрудников старше 40 лет
     }
