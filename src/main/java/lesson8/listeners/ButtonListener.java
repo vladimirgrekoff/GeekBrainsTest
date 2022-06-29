@@ -105,7 +105,7 @@ public class ButtonListener implements ActionListener {
                     changeLeftBracketCounter(); //измненение значения счетчика левых скобок
                 }
             }
-            if (strButton.equals(")")) {
+            if (strButton.equals(")") && intLen > 0) {
                 //если правая скобка (закрывающая)
 
                 if (intLen > 0 && strInputField.substring(intLen - 1).equals(")") && (leftBracketCount > rightBracketCount)) {
@@ -364,19 +364,28 @@ public class ButtonListener implements ActionListener {
         String symbol;
         int len = strCheckedString.length();
 
-        if (len == 0) {
-            result = false;
-        }
-
         for (int i = 0; i < len ; i++) {
-            symbol = strCheckedString.substring((i), i+1);
-            if ( "123456789".contains(symbol)) {
+            symbol = strCheckedString.substring((i), i + 1);
+            if ("123456789".contains(symbol)) {
 //                System.out.println(symbol);
                 result = false;
                 break;
+            } else if ("-0.".contains(symbol)) {
+                if (i == 0 && symbol.equals("-") && len > 1) {
+                    result = true;
+                } else if (i == 1 || i == 2 && symbol.equals(".") && len >= 2) {
+                    result = true;
+                } else if (symbol.equals("0")) {
+                    result = true;
+                }
             }
         }
-
+        if (len == 1 && strCheckedString.endsWith("-")) {
+            result = false;
+        }
+        if (len == 0) {
+            result = false;
+        }
         return result;
     }
     private void checkInputNumberVariable(String strButton) {
