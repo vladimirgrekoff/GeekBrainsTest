@@ -126,7 +126,7 @@ public class Dog extends Animal {
             if ((runDistance-4) > 4) {
                 strDistance = "Пес " + getDogName() + " проплыл 4м, развернулся поплыл назад.";
             } else {
-                strDistance = "Пес " + getDogName() + " проплыл 8м, добрался до берега.";
+                strDistance = "Пес " + getDogName() + " проплыл " + runDistance + "м, добрался до берега.";
             }
 
         } else if (getAge() <= 7) {
@@ -142,7 +142,7 @@ public class Dog extends Animal {
             if ((runDistance - 3) > 3 ) {
                 strDistance = "Пес " + getDogName() + " проплыл 3м, развернулся поплыл назад.";
             } else {
-                strDistance = "Пес " + getDogName() + " проплыл 6м, добрался до берега.";
+                strDistance = "Пес " + getDogName() + " проплыл " + runDistance + "м, добрался до берега.";
             }
         }
         return strDistance;
